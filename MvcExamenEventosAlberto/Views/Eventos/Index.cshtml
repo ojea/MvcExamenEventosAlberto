@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MvcExamenEventosAlberto.Models.Eventos>
+
+@{
+    ViewData["Title"] = "Index";
+    string UrlBucket = keysModel.bucket;
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-outline-dark" asp-controller="Eventos" asp-action="Categorias">Categorias</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCategoria)
+            </td>
+            <td>
+                <img src="@UrlBucket@item.Imagen" style="height:200px; width:200px"/>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
