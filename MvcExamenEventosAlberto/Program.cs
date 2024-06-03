@@ -17,7 +17,6 @@ builder.Services.AddSingleton<KeysModels>(x => keysModel);
 // Add services to the container.
 builder.Services.AddAWSService<IAmazonS3>();
 builder.Services.AddTransient<ServiceEventos>();
-//builder.Services.AddTransient<ServiceStorageAWS>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
