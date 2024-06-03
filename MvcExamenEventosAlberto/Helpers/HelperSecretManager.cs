@@ -8,7 +8,7 @@ namespace MvcExamenEventosAlberto.Helpers
     {
         public static async Task<string> GetSecretsAsync()
         {
-            string secretName = "bucket-secret";
+            string secretName = "bucket-examen-aws-eventos";
             string region = "us-east-1";
 
             IAmazonSecretsManager client =
